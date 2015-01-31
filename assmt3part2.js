@@ -2,14 +2,8 @@ window.onload = function() {
     document.getElementById('output').innerHTML = 'test';
 }
 
-function saveDemoInput() {
-    localStorage.setItem('demoText',document.getElementsByName('demo-input')[0].value);
-}
 
-function clearLocalStorage() {
-    localStorage.clear();
-}
-
-function displayLocalStorage() {
-    document.getElementById('output').innerHTML = localStorage.getItem('demoText');
+function display(){
+    localStorage.setItem('number-Text',document.getElementsByName('number-input')[0].value);
+    document.getElementById('output').innerHTML = localStorage.getItem('number-Text');
 }
