@@ -6,16 +6,15 @@
    <script src="assmt3part2.js"></script>
 </head>
 <body>
-    <form name="gistForm" onsubmit="return validateNumber()" method="post">
+    <form name="gistForm">
         <input type="number" name="number-input" > Number of pages to return (30 results per page)<br>
         <input type="checkbox" name="javascript"> JavaScript
         <input type="checkbox" name="C++"> C++
         <input type="checkbox" name="SQL"> SQL
         <input type="checkbox" name="Python"> Python
-        <input type="button" name="displayButton" onclick="display()"  value="Display">
-        <input type="submit" name="submitButton" value="Search">
+        <input type="button" name="searchButton" onclick="getGists()"  value="Search">
     </form>
-        <div id="output"></div>
-
+        <div id="content"></div>
+        <h2>Search Results:</h2>
 </body>
 </html>
