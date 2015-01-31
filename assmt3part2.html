@@ -3,10 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>GitHub Gist Search</title>
-  <link rel="stylesheet" href="qunit/qunit.css">
+   <script src="assmt3part2.js"></script>
 </head>
 <body>
-  <div id="qunit"></div>
-  <script src="assmt3part2.js"></script>
+    <div id="output"></div>
+    <form>
+        <input type="text" name="demo-input">
+        <input type="button" name="save" onclick="saveDemoInput()" value="Save Text">
+        <input type="button" name="clear" onclick="clearLocalStorage()" value="Clear">
+        <input type="button" name="display" onclick="displayLocalStorage()" value="Display">
+    </form>
 </body>
 </html>
