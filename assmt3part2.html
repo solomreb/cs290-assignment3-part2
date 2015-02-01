@@ -8,13 +8,12 @@
 <body>
     <form name="gistForm">
         <input type="number" name="number-input" > Number of pages to return (30 results per page)<br>
-        <input type="checkbox" name="javascript"> JavaScript
-        <input type="checkbox" name="C++"> C++
-        <input type="checkbox" name="SQL"> SQL
-        <input type="checkbox" name="Python"> Python
+        <input type="checkbox" id="javascript" value="javascript"> JavaScript
+        <input type="checkbox" id="json" value="json"> Json
+        <input type="checkbox" id="sql" value ="sql"> SQL
+        <input type="checkbox" id="python" value ="python"> Python
         <input type="button" name="searchButton" onclick="getGists()"  value="Search">
     </form>
         <div id="content"></div>
-        <h2>Search Results:</h2>
 </body>
 </html>

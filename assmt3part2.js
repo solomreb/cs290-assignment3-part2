@@ -8,28 +8,32 @@ function validateNumber(){
 }
 
      function getGists() {
-        var url = "https://api.github.com/search/repositories";
+        var url = "https://api.github.com/search/";
         var xmlhttp = new XMLHttpRequest();
         if (!xmlhttp) {
             throw 'Unable to create HttpRequest.';
         }
-        //var params = {
-        //    q: language 
-        //};
-        url += '?' + 'q=language:javascript';
+        url += "repositories?q=language:";
+        var x = document.querySelectorAll('input:checked');
+        for (i=0; i<x.length; i++)
+        {
+            url += x[i].value;
+            url += '+language:';
+        }
+        console.log("Url= " + url);
         xmlhttp.onreadystatechange = function() {
             var text, content, html;
             if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                console.log("calling onreadystatechange function");
                 text = xmlhttp.responseText;
                 content = JSON.parse(text);
                 html = "<table>\n";
-                console.log(content.items.length);
+                html += "<h2>Gists matching your search:</h2>";
+                html += "<tr><th>Description</th><th>Language</th></tr>";
                 for (var i = 0; i < content.items.length; i++) {
                     html += "<tr><td>";
-                    html += i + ": " + content.items[i].description;
-                    html += "<td>";
-                    html += "<a href='" + content.items[i].url + "'>" + content.items[i].url + "</a>";
+                    html += i + ": ";
+                    html += "<a href='" + content.items[i].url + "'>" + content.items[i].description + "</a>";
+                    html += "<td>" + content.items[i].language;
                     html += "<tr>\n";
                 }
                 html += "</table>\n";
