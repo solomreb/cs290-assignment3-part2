@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>GitHub Gist Search</title>
-   <script src="assmt3part2.js"></script>
+   <script src="a3p2newversion.js"></script>
 </head>
 <body>
     <form name="gistForm">
@@ -14,6 +14,11 @@
         <input type="checkbox" id="python" value ="python"> Python
         <input type="button" name="searchButton" onclick="getGists()"  value="Search">
     </form>
-        <div id="content"></div>
+    <h2>Favorites</h2>
+    <div id="favorites"></div>
+    <h2>Search Results</h2>
+    <ol id="gistsList">
+    </ol>
 </body>
+    
 </html>
